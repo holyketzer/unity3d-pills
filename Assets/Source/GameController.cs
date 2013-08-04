@@ -30,7 +30,9 @@ public class GameController : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update () 
+	{
+		UpdateText();
 	}
 	
 	
@@ -49,8 +51,7 @@ public class GameController : MonoBehaviour {
 	
 	public void HitPill(GameObject pill, float score)
 	{
-		_totalScore += score;
-		guiText.text = String.Format("{0:F0}", _totalScore);
+		_totalScore += score;		
 		
 		RemovePill(pill);
 	}
@@ -59,5 +60,11 @@ public class GameController : MonoBehaviour {
 	{
 		Instantiate(pillPrefab);
 		++_pillCount;		
+	}
+	
+	private void UpdateText()
+	{
+		var totalTime = TimeSpan.FromSeconds(Time.fixedTime);
+		guiText.text = String.Format("Time {0:00}:{1:00} Score {2:F0}", totalTime.TotalMinutes, totalTime.Seconds, _totalScore);
 	}
 }
