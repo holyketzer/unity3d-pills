@@ -4,9 +4,10 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class GameController : MonoBehaviour {
-	
+		
 	public GameObject pillPrefab;
 	
+	// Complexity of the game. After each 10 sec. additional pill will be appear
 	private int SecondForAdditionalPills = 10;
 	
 	private static GameController m_Instance;
@@ -36,8 +37,7 @@ public class GameController : MonoBehaviour {
 	void Update () 
 	{
 		UpdateText();
-	}
-	
+	}	
 	
 	public void RemovePill(GameObject pill)
 	{		
@@ -48,6 +48,7 @@ public class GameController : MonoBehaviour {
 		RespawnPills();
 	}	
 	
+	// Spawn new pills
 	private void RespawnPills()
 	{
 		if (Time.fixedTime / SecondForAdditionalPills > _pillCount)
@@ -58,6 +59,8 @@ public class GameController : MonoBehaviour {
 		NewPill();
 	}
 	
+	
+	// Increase score counter
 	public void HitPill(GameObject pill, float score)
 	{
 		_totalScore += score;		
@@ -65,12 +68,16 @@ public class GameController : MonoBehaviour {
 		RemovePill(pill);
 	}
 	
+	
+	// Add new pill on scene	
 	private void NewPill()
 	{
 		Instantiate(pillPrefab);
 		++_pillCount;		
 	}
 	
+	
+	// Show timer and score	
 	private void UpdateText()
 	{
 		var totalTime = TimeSpan.FromSeconds(Time.fixedTime);
