@@ -16,6 +16,7 @@ public class GameController : MonoBehaviour {
 	void Awake()
   	{
     	m_Instance = this;
+		pillPrefab = (GameObject)BundleLoader.Load("file://" + Application.dataPath + "/AssetBundles/Pill.unity3d");
   	}
 
   	void OnDestroy()
