@@ -6,8 +6,8 @@ public class PillClass : MonoBehaviour {
 	private float minAngleSpeed = 50f;
 	private float maxAngleSpeed = 200f;
 	
-	private float minScale = 0.25f;
-	private float maxScale = 2;	
+	private float minScale = 0.15f;
+	private float maxScale = 1.5f;
 	
 	private float maxFallSpeed = 5;
 	

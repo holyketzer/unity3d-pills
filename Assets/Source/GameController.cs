@@ -50,7 +50,7 @@ public class GameController : MonoBehaviour {
 	public void HitPill(GameObject pill, float score)
 	{
 		_totalScore += score;
-		guiText.text = String.Format(" {0:F0}", _totalScore);
+		guiText.text = String.Format("{0:F0}", _totalScore);
 		
 		RemovePill(pill);
 	}
