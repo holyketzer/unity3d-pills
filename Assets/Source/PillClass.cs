@@ -44,6 +44,9 @@ public class PillClass : MonoBehaviour {
 			_zOffset = 0;
 		}
 		transform.Translate(new Vector3(dx, 0, _zOffset));
+		
+		var texture = PillTextureGenerator.Generate(32, 32);
+		renderer.material.mainTexture = texture;
 	}
 	
 	// Update is called once per frame

@@ -7,6 +7,8 @@ public class GameController : MonoBehaviour {
 	
 	public GameObject pillPrefab;
 	
+	private int SecondForAdditionalPills = 10;
+	
 	private static GameController m_Instance;
   	public static GameController Instance { get { return m_Instance; } }
 	
@@ -39,16 +41,22 @@ public class GameController : MonoBehaviour {
 	
 	public void RemovePill(GameObject pill)
 	{		
+		DestroyImmediate(pill.renderer.material.mainTexture);
 		Destroy(pill);
 		--_pillCount;		
 		
-		if (Time.fixedTime / 10 > _pillCount)
+		RespawnPills();
+	}	
+	
+	private void RespawnPills()
+	{
+		if (Time.fixedTime / SecondForAdditionalPills > _pillCount)
 		{
 			NewPill();
 		}
 		
 		NewPill();
-	}	
+	}
 	
 	public void HitPill(GameObject pill, float score)
 	{
