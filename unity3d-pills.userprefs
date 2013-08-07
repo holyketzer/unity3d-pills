@@ -1,11 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Source\PillTextureGenerator.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Source\LightLock.cs">
     <Files>
-      <File FileName="Assets\Source\PillClass.cs" Line="19" Column="25" />
-      <File FileName="Assets\Source\GameController.cs" Line="16" Column="2" />
-      <File FileName="Assets\Source\PillTextureGenerator.cs" Line="6" Column="28" />
-      <File FileName="Assets\Source\BundleLoader.cs" Line="7" Column="5" />
+      <File FileName="Assets\Source\PillTextureGenerator.cs" Line="4" Column="24" />
+      <File FileName="Assets\Source\LightLock.cs" Line="27" Column="29" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
